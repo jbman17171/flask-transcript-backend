@@ -59,6 +59,10 @@ def validate_video_with_playwright(video_url):
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Welcome to the Flask Backend!"})
+
 @app.route("/fetch-transcript", methods=["POST"])
 def fetch_transcript():
     data = request.json
